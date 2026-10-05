@@ -2,7 +2,7 @@
 
 Aerospace test campaign management: move hardware requests from intake through facility review and test planning.
 
-**[Try the interactive demo](https://msehgal001.github.io/tb3/demo.html)**
+**[Try the interactive demo](https://msehgal001.github.io/testbedz-app/demo.html)**
 
 The demo uses fictional campaigns and stores changes in the visitor's browser. No account, cloud access, or facility booking is required.
 
@@ -23,8 +23,8 @@ Earlier iterations are kept privately. This repository is the main public TestBe
 ## Run locally
 
 ```bash
-git clone https://github.com/msehgal001/tb3.git
-cd tb3
+git clone https://github.com/msehgal001/testbedz-app.git
+cd testbedz-app
 python3 -m http.server 8000
 ```
 
