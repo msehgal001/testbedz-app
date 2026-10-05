@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore TestBedz: an interactive aerospace test campaign demonstration with sample data.">
+  <title>TestBedz — Campaign demo</title>
+  <link rel="stylesheet" href="demo.css">
+  <script src="demo.js" defer></script>
+</head>
+<body>
+<header><a class="brand" href="demo.html">TestBedz<span>Aerospace test operations</span></a><a class="source" href="https://github.com/msehgal001/tb3">View source ↗</a></header>
+<div class="notice"><strong>Interactive demonstration</strong><span>Sample campaigns only. Changes stay in this browser. No account or facility booking is required.</span></div>
+<main>
+  <section class="intro"><p class="eyebrow">FROM INTAKE TO TEST READINESS</p><h1>A clear path through<br>every test campaign.</h1><p>Bring hardware requirements, facility planning, and campaign status into one workspace.</p></section>
+  <nav class="toolbar" aria-label="Demo workspace"><div class="tabs"><button id="client-tab" aria-pressed="true">Client workspace</button><button id="admin-tab" aria-pressed="false">Facility review</button></div><button id="new-campaign" class="primary">+ New campaign</button></nav>
+  <section class="metrics" aria-label="Campaign summary"><div><span>Active campaigns</span><strong id="active-count">—</strong></div><div><span>Tests planned</span><strong id="test-count">—</strong></div><div><span>Awaiting review</span><strong id="review-count">—</strong></div></section>
+  <div class="workspace"><section class="list-panel"><div class="panel-title"><h2>Campaigns</h2><span id="mode-label">Your test programs</span></div><div id="campaign-list"></div></section><section class="detail-panel" aria-label="Selected campaign"><div id="campaign-detail"></div></section></div>
+  <p class="footnote">A portfolio demonstration by <a href="https://msehgal.net">Madhav Sehgal</a>. Facility names, schedules, hardware, and results here are illustrative.</p>
+  <button id="reset-demo" class="quiet">Reset sample data</button><p id="announcement" role="status" aria-live="polite"></p>
+</main>
+<dialog id="campaign-dialog"><form id="campaign-form"><div class="dialog-title"><h2>New test campaign</h2><button type="button" id="close-dialog" aria-label="Close new campaign">×</button></div><p>Use fictional hardware and contact details for this demo.</p><label>Campaign name<input name="name" required maxlength="100" placeholder="Example: CubeSat structural qualification"></label><label>Hardware / program<input name="hardware" required maxlength="100" placeholder="Example: 3U engineering model"></label><label>Primary test<select name="test"><option>Vibration</option><option>Thermal vacuum</option><option>Shock</option><option>Electromagnetic compatibility</option></select></label><label>Target date<input name="date" type="date" required></label><label>Test objective<textarea name="objective" required maxlength="600" rows="3" placeholder="Describe what the campaign should verify."></textarea></label><button class="primary" type="submit">Create demo campaign</button></form></dialog>
+</body>
+</html>

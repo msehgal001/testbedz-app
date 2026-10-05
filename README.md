@@ -1,30 +1,24 @@
 # TestBedz
-### Aerospace test campaign management · Version 3
 
-A web application for submitting aerospace test campaigns, reviewing facility capabilities, and tracking requests from intake through planning. Client and administrator views share campaign data through Firebase.
+Aerospace test campaign management: move hardware requests from intake through facility review and test planning.
 
-## Core workflows
+**[Try the interactive demo](https://msehgal001.github.io/tb3/demo.html)**
 
-**For clients:** create an account, submit company and hardware details, specify test needs and schedule, add individual tests, and follow campaign status.
+The demo uses fictional campaigns and stores changes in the visitor's browser. No account, cloud access, or facility booking is required.
 
-**For facility administrators:** review incoming campaigns, inspect submitted test details, update campaign status, and view the facility calendar.
+## Explore the workflow
 
-## Features
+- Open a sample campaign and inspect its hardware, schedule, and test plan.
+- Create a fictional campaign and add a test.
+- Switch between the client workspace and facility review.
+- Update campaign status and watch the summary change.
+- Reset the sample data whenever you want.
 
-- Multi-step campaign intake with conditional fields for different test types.
-- Firebase email/password authentication.
-- Persistent campaign records in Cloud Firestore.
-- Live campaign updates through Firestore listeners.
-- Facility information, testing resources, and separate client and administrator dashboards.
+## Project scope
 
-## Technology
+The original application in `index.html` implements multi-step aerospace campaign intake, Firebase email/password authentication, Firestore persistence, and separate client and administrator views. The public portfolio demo is a separate local-data experience in `demo.html`; it never connects to Firebase.
 
-| Layer | Technology |
-| --- | --- |
-| Interface | HTML, Tailwind CSS, vanilla JavaScript modules |
-| Authentication | Firebase Authentication |
-| Database | Cloud Firestore |
-| Application | [index.html](index.html) |
+Earlier iterations are kept privately. This repository is the main public TestBedz project.
 
 ## Run locally
 
@@ -34,16 +28,17 @@ cd tb3
 python3 -m http.server 8000
 ```
 
-Open [localhost:8000](http://localhost:8000).
+Open `http://localhost:8000/demo.html` for the portfolio demo.
 
-For an independent deployment, replace `firebaseConfig` in `index.html` with your own Firebase project, enable email/password sign-in, configure Firestore access rules, and add your hosting domain to the authentication configuration. This repository does not include the deployed Firestore rules; administrator access also needs to be enforced in that configuration.
+For an independent cloud deployment of the original application, configure your own Firebase project, authentication domains, and server-enforced Firestore rules. Client-side administrator views do not enforce database authorization. Do not use fictional demo data as qualification evidence or a real booking request.
 
-## Repository guide
+## Source guide
 
-| Repository | Purpose |
+| File | Responsibility |
 | --- | --- |
-| [TestBedz](https://github.com/msehgal001/TestBedz) | Original local demo with example data |
-| [testbedzv2](https://github.com/msehgal001/testbedzv2) | Firebase-connected version |
-| [tb3](https://github.com/msehgal001/tb3) | Further Firebase-connected iteration |
+| `demo.html` · `demo.css` · `demo.js` | Hosted portfolio demo; browser-local sample campaigns |
+| `index.html` | Original Firebase-connected application |
 
-Built by [Madhav Sehgal](https://msehgal.net), M.S.E. Aerospace Engineering, University of Michigan.
+**HTML · CSS · JavaScript · Firebase**
+
+Built by [Madhav Sehgal](https://msehgal.net).
